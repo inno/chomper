@@ -7,6 +7,9 @@ use File::Random qw( random_file );
 my $lame_bin = `which lame`;
 my $aubiocut_bin = `which aubiocut`;
 
+die "lame (http://lame.sourceforge.net) is required for this tool to work!\n" unless $lame_bin;
+die "aubio (http://aubio.org) is required for this tool to work!\n" unless $aubiocut_bin;
+
 chomp $lame_bin;
 chomp $aubiocut_bin;
 
