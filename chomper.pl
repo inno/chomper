@@ -15,11 +15,12 @@ chomp $aubiocut_bin;
 
 my $count = shift;
 my $root_dir = shift;
-chomp $root_dir;
 
 die "Syntax: $0 {count_to_chew} {file_source} {destination}\n" if !$count or !$root_dir;
 die "The count must be numeric and greater than one\n" if $count < 1;
 die "Path [$root_dir] is not valid\n" unless -d $root_dir;
+
+chomp $root_dir;
 
 my $dest_dir = shift || 'smpl';
 my $tmp_dir = 'p1aygrnd';
